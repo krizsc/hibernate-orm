@@ -79,7 +79,7 @@ public class PersistentSet<E> extends AbstractPersistentCollection<E> implements
 		final HashMap<E,E> clonedSet = CollectionHelper.mapOfSize( set.size() );
 		for ( E aSet : set ) {
 			final E copied = (E) persister.getElementType().deepCopy( aSet, persister.getFactory() );
-			clonedSet.put( copied, copied );
+			clonedSet.put( aSet, copied );
 		}
 		return clonedSet;
 	}
